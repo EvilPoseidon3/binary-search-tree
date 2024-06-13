@@ -15,7 +15,6 @@ class Tree
     @tree_array = Array.new(1)
     @node_array = build_node_array(array)
     sorting_adding(@node_array,@tree_array)
-    puts @tree_array.compact
     @tree_array
   end
 
@@ -64,6 +63,6 @@ class Tree
           end
         end
       end
-      puts node.index
+      # puts "index:|#{node.index}| data: |#{node.data }|"
   end
 end
