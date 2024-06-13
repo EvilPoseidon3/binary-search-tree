@@ -1,8 +1,8 @@
 
-require_relative "/binary-search-tree"
+require_relative "binary-search-tree"
 require_relative "compairable"
 
-class Tree < Node
+class Tree 
   include Comparable
   attr_accessor :root
 
@@ -14,6 +14,7 @@ class Tree < Node
   def build_tree(array)
     @tree_array = Array.new
     @node_array = build_node_array(array)
+    puts @node_array.class
     sorting_adding(@node_array,@tree_array)
 
     @tree_array
@@ -31,17 +32,18 @@ class Tree < Node
   # building node.class array from normal array
   def build_node_array(array) 
     @sorted_array = array
-    @sorted_first = @sorted_array.slice(0,(@sorted_array.length - 1)/2)
-    @sorted_second = @sorted_array.slice((@sorted_array.length)/2, -1)
+    @sorted_first = @sorted_array[0,(@sorted_array.length - 1)/2]
+    @sorted_second = @sorted_array[(@sorted_array.length)/2, @sorted_array.length]
     @split_sort_array = @sorted_second + @sorted_first
     @split_node_array = node_array(@split_sort_array)
     @split_node_array
   end
 
-  # turns elements in array into a node
+  # turns elements in array into a node##########
   def node_array(array)
     @node_array = Array.new
-    array.each { |i| @node_array.push(Node.new(i))}
+    array.each { |i| @node_array << Node.new(i)}
+    @node_array
   end
 
   # takes in a node and compares it to data
