@@ -1,14 +1,15 @@
 
 module Comparable
   
-  def compare(root, node = nil)
-    if node >= root 
-      node.left = true
-      node.right = false
-    else
-      node.right = true
-      node.left = false
-    end
+  def compare(root, node)
+
+      if node.data >= root.data 
+        node.left = true
+        node.right = false
+      else
+        node.right = true
+        node.left = false
+      end
   end
 
 
