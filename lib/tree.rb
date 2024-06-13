@@ -12,11 +12,9 @@ class Tree
   end
 
   def build_tree(array)
-    @tree_array = Array.new
+    @tree_array = Array.new(1)
     @node_array = build_node_array(array)
-    puts @node_array.class
     sorting_adding(@node_array,@tree_array)
-
     @tree_array
   end
 
@@ -50,16 +48,21 @@ class Tree
   # and sets its index number and sets left
   # or right to true
   def left_right(node, newArray, index=0)
-    until newArray[index] == nil
-      compare(index, node.data)
-        if node.left = true
-          index = index*2+1
-          node.index = node.index*2+1
+      while newArray[index] != nil
+        if newArray[index] == nil
+          node.index = index
+        else
+          compare(newArray[index], node)
+          if node.left == true
+            index = index * 2 + 1
+            node.index = node.index * 2 + 1
+          end
+          if node.right == true
+            index = index * 2 + 1
+            node.index = node.index * 2 + 1
+          end
         end
-        if node.right = true
-          index = index*2+1
-          node.index = node.index*2+2
-        end
-    end
+      end
+      puts node.index
   end
 end
