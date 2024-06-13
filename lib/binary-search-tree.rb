@@ -12,3 +12,10 @@ attr_accessor :data,:index,:internode,:leafnode,:left,:right
 
 
 end
+
+# def self.find(interger)
+#   self.compact.each { |node|  
+#   if node.data == interger
+#   puts "Node at index #{node.index} with value #{node.data}"
+#   end}
+# end
