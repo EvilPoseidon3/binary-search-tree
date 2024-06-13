@@ -7,7 +7,7 @@ attr_accessor :data,:index,:internode,:leafnode,:left,:right
     @leafnode = nil
     @left = nil
     @right = nil
-    @index = nil
+    @index = 0
   end
 
 
