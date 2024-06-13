@@ -15,6 +15,7 @@ class Tree
     @tree_array = Array.new(1)
     @node_array = build_node_array(array)
     sorting_adding(@node_array,@tree_array)
+    puts @tree_array.compact
     @tree_array
   end
 
@@ -58,8 +59,8 @@ class Tree
             node.index = node.index * 2 + 1
           end
           if node.right == true
-            index = index * 2 + 1
-            node.index = node.index * 2 + 1
+            index = index * 2 + 2
+            node.index = node.index * 2 + 2
           end
         end
       end
