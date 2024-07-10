@@ -7,4 +7,4 @@ bitree = Tree.new(array)
 
 # bitree.find(9)
 
-bitree.level_order(6)
+puts bitree.root
