@@ -11,6 +11,10 @@ class Tree
     @root = build_tree(array)
   end
 
+  def to_s
+    @root.compact.each { |node| puts "Node at index: |#{node.index}|\n---Value |#{node.data}|"}
+  end
+
   def build_tree(array)
     @tree_array = Array.new(1)
     @node_array = build_node_array(array)
@@ -30,8 +34,10 @@ class Tree
   # building node.class array from normal array
   def build_node_array(array) 
     @sorted_array = array
-    @sorted_first = @sorted_array[0,(@sorted_array.length - 1)/2]
-    @sorted_second = @sorted_array[(@sorted_array.length)/2, @sorted_array.length]
+    @sorted_first = @sorted_array[0..(@sorted_array.length - 1)/2]
+    puts @sorted_first
+    @sorted_second = @sorted_array[(@sorted_array.length - 1)/2 + 2..@sorted_array.length - 1]
+    puts @sorted_second
     @split_sort_array = @sorted_second + @sorted_first
     @split_node_array = node_array(@split_sort_array)
     @split_node_array
