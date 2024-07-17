@@ -2,12 +2,12 @@
 require_relative "binary-search-tree"
 require_relative "compairable"
 
-class Tree 
+class Tree
   include Comparable
   attr_accessor :root
 
   def initialize(array)
-    
+
     @root = build_tree(array)
   end
 
@@ -22,7 +22,7 @@ class Tree
     @tree_array
   end
 
-    #takes each node and and runs #left_right
+    #takes each node and runs #left_right
     #then recursivele adds them to @tree array
   def sorting_adding(node_array,tree_array)
       node_array.each{ |node|
@@ -32,7 +32,7 @@ class Tree
   end
 
   # building node.class array from normal array
-  def build_node_array(array) 
+  def build_node_array(array)
     @sorted_array = array
     @sorted_first = @sorted_array[0..(@sorted_array.length - 1)/2]
     puts @sorted_first

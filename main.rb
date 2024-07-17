@@ -8,4 +8,8 @@ puts bitree
 
 # bitree.find(9)
 
+<<<<<<< HEAD
 # bitree.level_order(8)
+=======
+puts bitree.root
+>>>>>>> 67781d63708d9497205c30bb8646a054c31f4d2a
